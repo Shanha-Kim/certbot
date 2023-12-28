@@ -1,0 +1,23 @@
+version: "3"
+services:
+    web:
+        image: nginx:latest
+        restart: always
+        volumes:
+            - /home/tlexibetarelease/tlexi/certbot/conf.d:/etc/nginx/conf.d
+            - /home/tlexibetarelease/tlexi/certbot/certbot/conf:/etc/nginx/ssl
+            - /home/tlexibetarelease/tlexi/certbot/certbot/data:/var/www/certbot
+        ports:
+            - 80:80
+            - 443:443
+
+    certbot:
+        image: certbot/certbot:latest
+        command: certonly --webroot --webroot-path=/var/www/certbot --email shk8532@gmail.com --agree-tos --no-eff-email -d tlexi.com
+        # command: renew --server https://acme-v02.api.letsencrypt.org/directory --cert-name tlexi.com
+        # command: certificates
+        # command: delete --cert-name tlexi.com
+        volumes:
+            - /home/tlexibetarelease/tlexi/certbot/certbot/conf:/etc/letsencrypt
+            - /home/tlexibetarelease/tlexi/certbot/certbot/logs:/var/log/letsencrypt
+            - /home/tlexibetarelease/tlexi/certbot/certbot/data:/var/www/certbot

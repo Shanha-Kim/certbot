@@ -1,0 +1,23 @@
+2023-10-23 06:23:15,704:DEBUG:certbot._internal.main:certbot version: 2.6.0
+2023-10-23 06:23:15,704:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2023-10-23 06:23:15,704:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'tlexi.com']
+2023-10-23 06:23:15,705:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2023-10-23 06:23:15,720:DEBUG:certbot._internal.log:Root logging level set at 30
+2023-10-23 06:23:15,721:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2023-10-23 06:23:15,721:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * tlexi.com
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2023-10-23 06:23:15,722:INFO:certbot._internal.storage:Removed /etc/letsencrypt/renewal/tlexi.com.conf
+2023-10-23 06:23:15,723:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/cert.pem
+2023-10-23 06:23:15,723:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/privkey.pem
+2023-10-23 06:23:15,723:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/chain.pem
+2023-10-23 06:23:15,724:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/fullchain.pem
+2023-10-23 06:23:15,724:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/README
+2023-10-23 06:23:15,726:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com
+2023-10-23 06:23:15,729:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/archive/tlexi.com
+2023-10-23 06:23:15,729:DEBUG:certbot._internal.display.obj:Notifying user: Deleted all files relating to certificate tlexi.com.
