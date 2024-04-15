@@ -1,13 +1,17 @@
-2023-10-23 06:15:30,165:DEBUG:certbot._internal.main:certbot version: 2.6.0
-2023-10-23 06:15:30,165:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
-2023-10-23 06:15:30,165:DEBUG:certbot._internal.main:Arguments: ['--server', 'https://acme-v02.api.letsencrypt.org/directory', '--cert-name', 'tlexi.com']
-2023-10-23 06:15:30,165:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2023-10-23 06:15:30,185:DEBUG:certbot._internal.log:Root logging level set at 30
-2023-10-23 06:15:30,187:DEBUG:certbot._internal.display.obj:Notifying user: Processing /etc/letsencrypt/renewal/tlexi.com.conf
-2023-10-23 06:15:30,206:DEBUG:certbot._internal.plugins.selection:Requested authenticator <certbot._internal.cli.cli_utils._Default object at 0x7f9ff21fa320> and installer <certbot._internal.cli.cli_utils._Default object at 0x7f9ff21fa320>
-2023-10-23 06:15:30,207:DEBUG:certbot._internal.cli:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
-2023-10-23 06:15:30,207:DEBUG:certbot._internal.cli:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
-2023-10-23 06:15:30,207:DEBUG:certbot._internal.cli:Var account={'server'} (set by user).
-2023-10-23 06:15:30,239:DEBUG:certbot._internal.storage:Should renew, less than 30 days before certificate expiry 2023-10-22 13:19:17 UTC.
-2023-10-23 06:15:30,239:INFO:certbot._internal.renewal:Certificate is due for renewal, auto-renewing...
-2023-10-23 06:15:30,239:INFO:certbot._internal.renewal:Non-interactive renewal: random delay of 431.14283826531613 seconds
+2024-04-15 10:54:22,549:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-04-15 10:54:22,549:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-04-15 10:54:22,549:DEBUG:certbot._internal.main:Arguments: []
+2024-04-15 10:54:22,550:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-04-15 10:54:22,568:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-04-15 10:54:22,591:DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): r3.o.lencr.org:80
+2024-04-15 10:54:22,879:DEBUG:urllib3.connectionpool:http://r3.o.lencr.org:80 "POST / HTTP/1.1" 200 503
+2024-04-15 10:54:22,881:DEBUG:certbot.ocsp:OCSP response for certificate /etc/letsencrypt/live/tlexi.com/cert.pem is signed by the certificate's issuer.
+2024-04-15 10:54:22,882:DEBUG:certbot.ocsp:OCSP certificate status for /etc/letsencrypt/live/tlexi.com/cert.pem is: OCSPCertStatus.GOOD
+2024-04-15 10:54:22,888:DEBUG:certbot._internal.display.obj:Notifying user: Found the following certs:
+  Certificate Name: tlexi.com
+    Serial Number: 3d14eea18e754c4c01cf9bdb63d44757aa8
+    Key Type: ECDSA
+    Domains: tlexi.com
+    Expiry Date: 2024-07-14 09:45:50+00:00 (VALID: 89 days)
+    Certificate Path: /etc/letsencrypt/live/tlexi.com/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/tlexi.com/privkey.pem

@@ -1,17 +1,23 @@
-2023-06-19 04:50:17,142:DEBUG:certbot._internal.main:certbot version: 2.4.0
-2023-06-19 04:50:17,142:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
-2023-06-19 04:50:17,142:DEBUG:certbot._internal.main:Arguments: []
-2023-06-19 04:50:17,142:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2023-06-19 04:50:17,154:DEBUG:certbot._internal.log:Root logging level set at 30
-2023-06-19 04:50:17,166:DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): r3.o.lencr.org:80
-2023-06-19 04:50:17,424:DEBUG:urllib3.connectionpool:http://r3.o.lencr.org:80 "POST / HTTP/1.1" 200 503
-2023-06-19 04:50:17,424:DEBUG:certbot.ocsp:OCSP response for certificate /etc/letsencrypt/live/tlexi.com/cert.pem is signed by the certificate's issuer.
-2023-06-19 04:50:17,425:DEBUG:certbot.ocsp:OCSP certificate status for /etc/letsencrypt/live/tlexi.com/cert.pem is: OCSPCertStatus.GOOD
-2023-06-19 04:50:17,431:DEBUG:certbot._internal.display.obj:Notifying user: Found the following certs:
-  Certificate Name: tlexi.com
-    Serial Number: 343b66814d35cf2e243ba8549ef2d8cbcb3
-    Key Type: ECDSA
-    Domains: tlexi.com
-    Expiry Date: 2023-09-17 03:18:47+00:00 (VALID: 89 days)
-    Certificate Path: /etc/letsencrypt/live/tlexi.com/fullchain.pem
-    Private Key Path: /etc/letsencrypt/live/tlexi.com/privkey.pem
+2024-04-15 10:45:20,841:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-04-15 10:45:20,841:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-04-15 10:45:20,841:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'tlexi.com']
+2024-04-15 10:45:20,842:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-04-15 10:45:20,860:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-04-15 10:45:20,861:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2024-04-15 10:45:20,862:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * tlexi.com
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2024-04-15 10:45:20,862:INFO:certbot._internal.storage:Removed /etc/letsencrypt/renewal/tlexi.com.conf
+2024-04-15 10:45:20,864:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/cert.pem
+2024-04-15 10:45:20,864:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/privkey.pem
+2024-04-15 10:45:20,864:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/chain.pem
+2024-04-15 10:45:20,864:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/fullchain.pem
+2024-04-15 10:45:20,865:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com/README
+2024-04-15 10:45:20,866:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/live/tlexi.com
+2024-04-15 10:45:20,867:DEBUG:certbot._internal.storage:Removed /etc/letsencrypt/archive/tlexi.com
+2024-04-15 10:45:20,867:DEBUG:certbot._internal.display.obj:Notifying user: Deleted all files relating to certificate tlexi.com.
