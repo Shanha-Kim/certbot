@@ -1,23 +1,17 @@
-2024-04-15 13:10:03,304:DEBUG:certbot._internal.main:certbot version: 2.10.0
-2024-04-15 13:10:03,305:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
-2024-04-15 13:10:03,305:DEBUG:certbot._internal.main:Arguments: ['--server', 'https://acme-v02.api.letsencrypt.org/directory', '--cert-name', 'tlexi.com']
-2024-04-15 13:10:03,305:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2024-04-15 13:10:03,326:DEBUG:certbot._internal.log:Root logging level set at 30
-2024-04-15 13:10:03,328:DEBUG:certbot._internal.display.obj:Notifying user: Processing /etc/letsencrypt/renewal/tlexi.com.conf
-2024-04-15 13:10:03,331:DEBUG:certbot.configuration:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
-2024-04-15 13:10:03,331:DEBUG:certbot.configuration:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
-2024-04-15 13:10:03,331:DEBUG:certbot.configuration:Var account={'server'} (set by user).
-2024-04-15 13:10:03,331:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
-2024-04-15 13:10:03,361:DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): r3.o.lencr.org:80
-2024-04-15 13:10:03,376:DEBUG:urllib3.connectionpool:http://r3.o.lencr.org:80 "POST / HTTP/1.1" 200 503
-2024-04-15 13:10:03,379:DEBUG:certbot.ocsp:OCSP response for certificate /etc/letsencrypt/archive/tlexi.com/cert1.pem is signed by the certificate's issuer.
-2024-04-15 13:10:03,380:DEBUG:certbot.ocsp:OCSP certificate status for /etc/letsencrypt/archive/tlexi.com/cert1.pem is: OCSPCertStatus.GOOD
-2024-04-15 13:10:03,384:DEBUG:certbot._internal.display.obj:Notifying user: Certificate not yet due for renewal
-2024-04-15 13:10:03,384:DEBUG:certbot._internal.plugins.selection:Requested authenticator webroot and installer None
-2024-04-15 13:10:03,384:DEBUG:certbot._internal.display.obj:Notifying user: 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-2024-04-15 13:10:03,385:DEBUG:certbot._internal.display.obj:Notifying user: The following certificates are not due for renewal yet:
-2024-04-15 13:10:03,385:DEBUG:certbot._internal.display.obj:Notifying user:   /etc/letsencrypt/live/tlexi.com/fullchain.pem expires on 2024-07-14 (skipped)
-2024-04-15 13:10:03,385:DEBUG:certbot._internal.display.obj:Notifying user: No renewals were attempted.
-2024-04-15 13:10:03,385:DEBUG:certbot._internal.display.obj:Notifying user: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-2024-04-15 13:10:03,385:DEBUG:certbot._internal.renewal:no renewal failures
+2024-08-13 02:17:48,498:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-08-13 02:17:48,499:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-08-13 02:17:48,499:DEBUG:certbot._internal.main:Arguments: []
+2024-08-13 02:17:48,500:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-08-13 02:17:48,521:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-08-13 02:17:48,554:DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): e5.o.lencr.org:80
+2024-08-13 02:17:48,891:DEBUG:urllib3.connectionpool:http://e5.o.lencr.org:80 "POST / HTTP/1.1" 200 345
+2024-08-13 02:17:48,896:DEBUG:certbot.ocsp:OCSP response for certificate /etc/letsencrypt/live/tlexi.com/cert.pem is signed by the certificate's issuer.
+2024-08-13 02:17:48,899:DEBUG:certbot.ocsp:OCSP certificate status for /etc/letsencrypt/live/tlexi.com/cert.pem is: OCSPCertStatus.GOOD
+2024-08-13 02:17:48,910:DEBUG:certbot._internal.display.obj:Notifying user: Found the following certs:
+  Certificate Name: tlexi.com
+    Serial Number: 4f35d397871d8cbd1da56065d88b4547361
+    Key Type: ECDSA
+    Domains: tlexi.com
+    Expiry Date: 2024-10-07 11:04:18+00:00 (VALID: 55 days)
+    Certificate Path: /etc/letsencrypt/live/tlexi.com/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/tlexi.com/privkey.pem

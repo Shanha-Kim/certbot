@@ -1,15 +1,25 @@
-docker run --rm --name certbot \
- -v '/home/user1/tlexi/certbot/certbot/conf:/etc/letsencrypt' \
- -v '/home/user1/tlexi/certbot/certbot/logs:/var/log/letsencrypt' \
- -v '/home/user1/tlexi/certbot/certbot/data:/var/www/certbot' \
- certbot/certbot renew --server https://acme-v02.api.letsencrypt.org/directory --cert-name tlexi.com
+#!/bin/bash
 
-docker run  -it --rm --name certbot \
- -v '/home/user1/tlexi/certbot/certbot/conf:/etc/letsencrypt' \
- -v '/home/user1/tlexi/certbot/certbot/logs:/var/log/letsencrypt' \
- -v '/home/user1/tlexi/certbot/certbot/data:/var/www/certbot' \
- certbot/certbot certificates
+# 기존 tlexi 서비스용 docker중지
+bash /home/user1/tlexi/backend/stop_server.sh
 
-  bash run_server.sh
+# certbot 이용해 letsencrypt 인증서 갱신
+bash /home/user1/tlexi/certbot/run_certbot.sh
+bash /home/user1/tlexi/certbot/kill_certbot.sh
 
-#   crontab save : 0 19 1 * * /home/user1/tlexi/backend/ssl_renew.sh >> /home/user1/tlexi/backend/log/ssl_renew.log
+# 갱신된 인증서로 이전 인증서 덮어쓰기
+/usr/bin/mv -f /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/cert3.pem /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/cert2.pem
+/usr/bin/mv -f /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/chain3.pem /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/chain2.pem
+/usr/bin/mv -f /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/fullchain3.pem /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/fullchain2.pem
+/usr/bin/mv -f /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/privkey3.pem /home/user1/tlexi/certbot/certbot/conf/archive/tlexi.com/privkey2.pem
+
+#docker로 받은 인증서 권한변경
+chown -R user1:user1 /home/user1/tlexi/certbot
+
+bash /home/user1/tlexi/backend/run_server.sh
+
+nowdate=$(date +"%Y-%m-%d %H:%M:%S")
+echo "######################################################"
+echo "It is ${nowdate}, letsencrypt renewing is completed."
+echo "######################################################"
+echo ""

@@ -1,13 +1,390 @@
-2024-04-15 10:42:30,076:DEBUG:certbot._internal.main:certbot version: 2.10.0
-2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
-2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Arguments: []
-2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2024-04-15 10:42:30,096:DEBUG:certbot._internal.log:Root logging level set at 30
-2024-04-15 10:42:30,128:DEBUG:certbot._internal.display.obj:Notifying user: Found the following certs:
-  Certificate Name: tlexi.com
-    Serial Number: 3d42ed9aa01f5e33a66f941490a008f309f
-    Key Type: ECDSA
-    Domains: tlexi.com
-    Expiry Date: 2024-04-08 01:48:00+00:00 (INVALID: EXPIRED)
-    Certificate Path: /etc/letsencrypt/live/tlexi.com/fullchain.pem
-    Private Key Path: /etc/letsencrypt/live/tlexi.com/privkey.pem
+2024-06-30 19:00:02,977:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-06-30 19:00:02,978:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-06-30 19:00:02,978:DEBUG:certbot._internal.main:Arguments: ['--server', 'https://acme-v02.api.letsencrypt.org/directory', '--cert-name', 'tlexi.com']
+2024-06-30 19:00:02,978:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-06-30 19:00:02,999:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-06-30 19:00:03,001:DEBUG:certbot._internal.display.obj:Notifying user: Processing /etc/letsencrypt/renewal/tlexi.com.conf
+2024-06-30 19:00:03,003:DEBUG:certbot.configuration:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
+2024-06-30 19:00:03,003:DEBUG:certbot.configuration:Var server=https://acme-v02.api.letsencrypt.org/directory (set by user).
+2024-06-30 19:00:03,003:DEBUG:certbot.configuration:Var account={'server'} (set by user).
+2024-06-30 19:00:03,003:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
+2024-06-30 19:00:03,032:DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): r3.o.lencr.org:80
+2024-06-30 19:00:03,322:DEBUG:urllib3.connectionpool:http://r3.o.lencr.org:80 "POST / HTTP/1.1" 200 503
+2024-06-30 19:00:03,325:DEBUG:certbot.ocsp:OCSP response for certificate /etc/letsencrypt/archive/tlexi.com/cert1.pem is signed by the certificate's issuer.
+2024-06-30 19:00:03,326:DEBUG:certbot.ocsp:OCSP certificate status for /etc/letsencrypt/archive/tlexi.com/cert1.pem is: OCSPCertStatus.GOOD
+2024-06-30 19:00:03,331:DEBUG:certbot._internal.storage:Should renew, less than 30 days before certificate expiry 2024-07-14 09:45:50 UTC.
+2024-06-30 19:00:03,331:INFO:certbot._internal.renewal:Certificate is due for renewal, auto-renewing...
+2024-06-30 19:00:03,332:INFO:certbot._internal.renewal:Non-interactive renewal: random delay of 195.82970773199213 seconds
+2024-06-30 19:03:19,170:DEBUG:certbot._internal.plugins.selection:Requested authenticator webroot and installer None
+2024-06-30 19:03:19,173:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * webroot
+Description: Saves the necessary validation files to a .well-known/acme-challenge/ directory within the nominated webroot path. A seperate HTTP server must be running and serving files from the webroot path. HTTP challenge only (wildcards not supported).
+Interfaces: Authenticator, Plugin
+Entry point: EntryPoint(name='webroot', value='certbot._internal.plugins.webroot:Authenticator', group='certbot.plugins')
+Initialized: <certbot._internal.plugins.webroot.Authenticator object at 0x7f22f5105790>
+Prep: True
+2024-06-30 19:03:19,176:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.webroot.Authenticator object at 0x7f22f5105790> and installer None
+2024-06-30 19:03:19,176:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator webroot, Installer None
+2024-06-30 19:03:19,237:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/1506750916', new_authzr_uri=None, terms_of_service=None), 7eb11bac6ec4fc8026ae2a40c8ac7f5f, Meta(creation_dt=datetime.datetime(2024, 1, 9, 2, 32, 3, tzinfo=<UTC>), creation_host='4b0893f7cd1b', register_to_eff=None))>
+2024-06-30 19:03:19,240:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2024-06-30 19:03:19,245:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2024-06-30 19:03:19,777:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "GET /directory HTTP/1.1" 200 746
+2024-06-30 19:03:19,779:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:19 GMT
+Content-Type: application/json
+Content-Length: 746
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "FAN3RULFQGk": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417",
+  "keyChange": "https://acme-v02.api.letsencrypt.org/acme/key-change",
+  "meta": {
+    "caaIdentities": [
+      "letsencrypt.org"
+    ],
+    "termsOfService": "https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf",
+    "website": "https://letsencrypt.org"
+  },
+  "newAccount": "https://acme-v02.api.letsencrypt.org/acme/new-acct",
+  "newNonce": "https://acme-v02.api.letsencrypt.org/acme/new-nonce",
+  "newOrder": "https://acme-v02.api.letsencrypt.org/acme/new-order",
+  "renewalInfo": "https://acme-v02.api.letsencrypt.org/draft-ietf-acme-ari-03/renewalInfo",
+  "revokeCert": "https://acme-v02.api.letsencrypt.org/acme/revoke-cert"
+}
+2024-06-30 19:03:19,783:DEBUG:certbot._internal.display.obj:Notifying user: Renewing an existing certificate for tlexi.com
+2024-06-30 19:03:19,790:DEBUG:acme.client:Requesting fresh nonce
+2024-06-30 19:03:19,790:DEBUG:acme.client:Sending HEAD request to https://acme-v02.api.letsencrypt.org/acme/new-nonce.
+2024-06-30 19:03:19,969:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "HEAD /acme/new-nonce HTTP/1.1" 200 0
+2024-06-30 19:03:19,970:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:19 GMT
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: eF-2qMJ9vMnpXKzNcBQqmn9qkBEhPLjqwbQY0L93f05dIs1EnQQ
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+
+2024-06-30 19:03:19,970:DEBUG:acme.client:Storing nonce: eF-2qMJ9vMnpXKzNcBQqmn9qkBEhPLjqwbQY0L93f05dIs1EnQQ
+2024-06-30 19:03:19,971:DEBUG:acme.client:JWS payload:
+b'{\n  "identifiers": [\n    {\n      "type": "dns",\n      "value": "tlexi.com"\n    }\n  ]\n}'
+2024-06-30 19:03:19,975:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/new-order:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTUwNjc1MDkxNiIsICJub25jZSI6ICJlRi0ycU1KOXZNbnBYS3pOY0JRcW1uOXFrQkVoUExqcXdiUVkwTDkzZjA1ZElzMUVuUVEiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL25ldy1vcmRlciJ9",
+  "signature": "hv7tW7SHfNs2aZLWw3UVPeFQmF6RuQUvoHWpuWQmkYEU9eC3hfZSo2DcblEPfkd2PKo79TZl00w2DxpqpYyqKxeerrc44fH-e7IBBHZjLTeWK5t1JUYBfAISQlt7wu7C3CIAeDfOVnlT7dCa-hQDyo_e1EHNDQsnS1cfeQGmoDsFnKV6gPFcbHXijsvGsJbw9tG5rTDEclt6LvX7cc0ATrzmqwOowOOcATewTtFJd03snp0LLLKTRi9BnS0NLPcctXubCPN7ccINBzvpv9mEESmZICtoU2XpZv4eJ9NS4dSvnh07_Qxlr6wsWzEfKWtFguefWtSnDRK9AG4O_f__KA",
+  "payload": "ewogICJpZGVudGlmaWVycyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiZG5zIiwKICAgICAgInZhbHVlIjogInRsZXhpLmNvbSIKICAgIH0KICBdCn0"
+}
+2024-06-30 19:03:20,304:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/new-order HTTP/1.1" 201 335
+2024-06-30 19:03:20,305:DEBUG:acme.client:Received response:
+HTTP 201
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:20 GMT
+Content-Type: application/json
+Content-Length: 335
+Connection: keep-alive
+Boulder-Requester: 1506750916
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Location: https://acme-v02.api.letsencrypt.org/acme/order/1506750916/283159797507
+Replay-Nonce: eF-2qMJ9-v_OZI1Fw-0J-tyfSpiEFmgk3dfKRhgGtpl0cWe_bf4
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "status": "pending",
+  "expires": "2024-07-07T19:03:20Z",
+  "identifiers": [
+    {
+      "type": "dns",
+      "value": "tlexi.com"
+    }
+  ],
+  "authorizations": [
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/370946818947"
+  ],
+  "finalize": "https://acme-v02.api.letsencrypt.org/acme/finalize/1506750916/283159797507"
+}
+2024-06-30 19:03:20,305:DEBUG:acme.client:Storing nonce: eF-2qMJ9-v_OZI1Fw-0J-tyfSpiEFmgk3dfKRhgGtpl0cWe_bf4
+2024-06-30 19:03:20,305:DEBUG:acme.client:JWS payload:
+b''
+2024-06-30 19:03:20,307:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/370946818947:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTUwNjc1MDkxNiIsICJub25jZSI6ICJlRi0ycU1KOS12X09aSTFGdy0wSi10eWZTcGlFRm1nazNkZktSaGdHdHBsMGNXZV9iZjQiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzM3MDk0NjgxODk0NyJ9",
+  "signature": "YNQjID5KKxzBGXlekL6aDR2o7IMyTZ6iTjVhc2FBgT3CGaonjG-0wEt55FUMF5qWfqB-yHUPMugKM3TUdZHj2iNcZYhz7HQqBDajGG-egLNpwChZkeg6DgsexU4n-l4CuwK8_fldTEg7aGm7_jhBb_AYLcptVK7U_hTBmBut1VUrjwEAwsoaL6YTudtnzWNdaa_yKRkmrUUTac3zsgpcVDyT_-w4e_Bhrovqics6oe9JUFQu3frky0AwCNAmwGzdfi8npEiTEhpLJhj9Rqe0fnjunCgQdEf0RHE84Vb_iWECkkOPw3JWRIR1Xis9qaFJsNXb4cLXJZyAAIwbnbkx4g",
+  "payload": ""
+}
+2024-06-30 19:03:20,488:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/370946818947 HTTP/1.1" 200 793
+2024-06-30 19:03:20,488:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:20 GMT
+Content-Type: application/json
+Content-Length: 793
+Connection: keep-alive
+Boulder-Requester: 1506750916
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: B-hK_YLC_QrxEaYYtyj-QgJM4XOiO9qiboZ-cycoBuMm8vAnquM
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "tlexi.com"
+  },
+  "status": "pending",
+  "expires": "2024-07-07T19:03:20Z",
+  "challenges": [
+    {
+      "type": "http-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    },
+    {
+      "type": "dns-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/BNvz_g",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    },
+    {
+      "type": "tls-alpn-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/nDjGKg",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    }
+  ]
+}
+2024-06-30 19:03:20,488:DEBUG:acme.client:Storing nonce: B-hK_YLC_QrxEaYYtyj-QgJM4XOiO9qiboZ-cycoBuMm8vAnquM
+2024-06-30 19:03:20,489:INFO:certbot._internal.auth_handler:Performing the following challenges:
+2024-06-30 19:03:20,489:INFO:certbot._internal.auth_handler:http-01 challenge for tlexi.com
+2024-06-30 19:03:20,490:INFO:certbot._internal.plugins.webroot:Using the webroot path /var/www/certbot for all unmatched domains.
+2024-06-30 19:03:20,490:DEBUG:certbot._internal.plugins.webroot:Creating root challenges validation dir at /var/www/certbot/.well-known/acme-challenge
+2024-06-30 19:03:20,493:DEBUG:certbot._internal.plugins.webroot:Attempting to save validation to /var/www/certbot/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk
+2024-06-30 19:03:20,494:DEBUG:acme.client:JWS payload:
+b'{}'
+2024-06-30 19:03:20,495:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTUwNjc1MDkxNiIsICJub25jZSI6ICJCLWhLX1lMQ19RcnhFYVlZdHlqLVFnSk00WE9pTzlxaWJvWi1jeWNvQnVNbTh2QW5xdU0iLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2NoYWxsLXYzLzM3MDk0NjgxODk0Ny9fZGZnYWcifQ",
+  "signature": "Y9nKm8VAfesqfuCwE5Scvn_Kbb1dXfD8OkT0j4jFc9Ypz9rNyTPZj3MOUZy3eFw9pInwnzHHBIFPhoxj24Yf0-r0j88gXYiMM4wGO-nceFrOn08xu5-w6A0PW7YPZDzsr8Ct07ypoA17L44gyTi-87sNDfp1gKfAl2v1aMRPFczrseOPXexaU_KkDalRC6OMt6jkklENMS0Hhs5Vvddmd-Qi4jHzgtyKN93G63HbM_sqZbniW8a4FLu04SUrMXlWhQF-kntnfdimavsxs7Psj2VcgB954KWXY0iEh_AJvswpLrExpYE-Nqj4wdGHKuBxFA2y0MOBOpd5OLxETbwkPg",
+  "payload": "e30"
+}
+2024-06-30 19:03:20,704:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/chall-v3/370946818947/_dfgag HTTP/1.1" 200 187
+2024-06-30 19:03:20,704:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:20 GMT
+Content-Type: application/json
+Content-Length: 187
+Connection: keep-alive
+Boulder-Requester: 1506750916
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index", <https://acme-v02.api.letsencrypt.org/acme/authz-v3/370946818947>;rel="up"
+Location: https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag
+Replay-Nonce: eF-2qMJ9Lg6m9H9XlbXKmJ2vH_Y4M6pKia0FgMOzP0cdr2Jt47M
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag",
+  "status": "pending",
+  "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+}
+2024-06-30 19:03:20,704:DEBUG:acme.client:Storing nonce: eF-2qMJ9Lg6m9H9XlbXKmJ2vH_Y4M6pKia0FgMOzP0cdr2Jt47M
+2024-06-30 19:03:20,705:INFO:certbot._internal.auth_handler:Waiting for verification...
+2024-06-30 19:03:21,706:DEBUG:acme.client:JWS payload:
+b''
+2024-06-30 19:03:21,708:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/370946818947:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTUwNjc1MDkxNiIsICJub25jZSI6ICJlRi0ycU1KOUxnNm05SDlYbGJYS21KMnZIX1k0TTZwS2lhMEZnTU96UDBjZHIySnQ0N00iLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzM3MDk0NjgxODk0NyJ9",
+  "signature": "S0NdwgLCbQOyYuhhX5oGKzTsCsfs2JEOKuZz3TayfmKSAMb02IKE7oGjtGB-oWQjz265Vlffyr9G0YTbG3ULq9IX0tEBGLwVDZFdlhDIrwt9_3vSv3y41ieGbfz05z4xuKZniYE2HYBSHqE4aZpmm8VEGVPExuZUTDRCQ-VpfO9zPCANHCti02qGrJk8tYO4kTZy9MlHYs0RP1t_aLa2R_Mgj9t4xO8RjQ8GVPFRXO6nJaIFM-38A5xLQ939s6bL59RCAVbTnVWVUYc-CrWoxho98-LKvk54ONnu_nDpH5Le4nW8dPGI6CD_ODzXTRwXZIJ7xwpc4qYPF-h3jUrtJQ",
+  "payload": ""
+}
+2024-06-30 19:03:21,893:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/370946818947 HTTP/1.1" 200 793
+2024-06-30 19:03:21,894:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:21 GMT
+Content-Type: application/json
+Content-Length: 793
+Connection: keep-alive
+Boulder-Requester: 1506750916
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: B-hK_YLC-NlC6eVb3VqMS2CQB6XKNqbOLypGLkY5sX0Ut88VMq8
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "tlexi.com"
+  },
+  "status": "pending",
+  "expires": "2024-07-07T19:03:20Z",
+  "challenges": [
+    {
+      "type": "http-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    },
+    {
+      "type": "dns-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/BNvz_g",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    },
+    {
+      "type": "tls-alpn-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/nDjGKg",
+      "status": "pending",
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk"
+    }
+  ]
+}
+2024-06-30 19:03:21,894:DEBUG:acme.client:Storing nonce: B-hK_YLC-NlC6eVb3VqMS2CQB6XKNqbOLypGLkY5sX0Ut88VMq8
+2024-06-30 19:03:24,896:DEBUG:acme.client:JWS payload:
+b''
+2024-06-30 19:03:24,902:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/370946818947:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTUwNjc1MDkxNiIsICJub25jZSI6ICJCLWhLX1lMQy1ObEM2ZVZiM1ZxTVMyQ1FCNlhLTnFiT0x5cEdMa1k1c1gwVXQ4OFZNcTgiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzM3MDk0NjgxODk0NyJ9",
+  "signature": "zIV-EOHi9cQSFSnvTz3zWbZyeZiOOFn-znk8MkGHQcfgsqhkFtnuNwbVlNQ3ea_cCcyqs-ZUigqJM2tOUTec66i3K1M8szlHWs2gXc53wmzRDoIxGM06XMdV4w1e3uIwSkI2X0f4WHONC1Da6QRZvAN6E5-EI1qpcxe8xoOOD99-0d-qapqqoSScc1e1D2tCrbHtxsWalAWGYaqEbcCNAo-KQkQ7gUZAjN_qKIirNw9AjoiQ0BvKopmqXJs6gXCLEmuqBuPsYiPVduPXIhTBM3PqnbL-YQa-mjKHaAItWu0qkg5-gMv4Wct_jfT8tqHGoUMunCmKRssMhzajcgsuCw",
+  "payload": ""
+}
+2024-06-30 19:03:25,089:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/370946818947 HTTP/1.1" 200 1320
+2024-06-30 19:03:25,092:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Sun, 30 Jun 2024 19:03:24 GMT
+Content-Type: application/json
+Content-Length: 1320
+Connection: keep-alive
+Boulder-Requester: 1506750916
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: B-hK_YLCMpjz3UskkoslWAbkwEPmKBFo1tl-E1UIdyfk7V_t6c8
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "tlexi.com"
+  },
+  "status": "invalid",
+  "expires": "2024-07-07T19:03:20Z",
+  "challenges": [
+    {
+      "type": "http-01",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/370946818947/_dfgag",
+      "status": "invalid",
+      "validated": "2024-06-30T19:03:20Z",
+      "error": {
+        "type": "urn:ietf:params:acme:error:unauthorized",
+        "detail": "223.130.141.103: Invalid response from https://tlexi.com/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk: 404",
+        "status": 403
+      },
+      "token": "O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk",
+      "validationRecord": [
+        {
+          "url": "http://tlexi.com/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk",
+          "hostname": "tlexi.com",
+          "port": "80",
+          "addressesResolved": [
+            "223.130.141.103"
+          ],
+          "addressUsed": "223.130.141.103"
+        },
+        {
+          "url": "https://tlexi.com/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk",
+          "hostname": "tlexi.com",
+          "port": "443",
+          "addressesResolved": [
+            "223.130.141.103"
+          ],
+          "addressUsed": "223.130.141.103"
+        }
+      ]
+    }
+  ]
+}
+2024-06-30 19:03:25,092:DEBUG:acme.client:Storing nonce: B-hK_YLCMpjz3UskkoslWAbkwEPmKBFo1tl-E1UIdyfk7V_t6c8
+2024-06-30 19:03:25,094:INFO:certbot._internal.auth_handler:Challenge failed for domain tlexi.com
+2024-06-30 19:03:25,094:INFO:certbot._internal.auth_handler:http-01 challenge for tlexi.com
+2024-06-30 19:03:25,095:DEBUG:certbot._internal.display.obj:Notifying user: 
+Certbot failed to authenticate some domains (authenticator: webroot). The Certificate Authority reported these problems:
+  Domain: tlexi.com
+  Type:   unauthorized
+  Detail: 223.130.141.103: Invalid response from https://tlexi.com/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk: 404
+
+Hint: The Certificate Authority failed to download the temporary challenge files created by Certbot. Ensure that the listed domains serve their content from the provided --webroot-path/-w and that files created there can be downloaded from the internet.
+
+2024-06-30 19:03:25,098:DEBUG:certbot._internal.error_handler:Encountered exception:
+Traceback (most recent call last):
+  File "/opt/certbot/src/certbot/certbot/_internal/auth_handler.py", line 108, in handle_authorizations
+    self._poll_authorizations(authzrs, max_retries, max_time_mins, best_effort)
+  File "/opt/certbot/src/certbot/certbot/_internal/auth_handler.py", line 212, in _poll_authorizations
+    raise errors.AuthorizationError('Some challenges have failed.')
+certbot.errors.AuthorizationError: Some challenges have failed.
+
+2024-06-30 19:03:25,098:DEBUG:certbot._internal.error_handler:Calling registered functions
+2024-06-30 19:03:25,098:INFO:certbot._internal.auth_handler:Cleaning up challenges
+2024-06-30 19:03:25,098:DEBUG:certbot._internal.plugins.webroot:Removing /var/www/certbot/.well-known/acme-challenge/O5JxGTA5UIa3R7y3P4T_GHRjUkXfSGvTwCAjkfApBsk
+2024-06-30 19:03:25,100:DEBUG:certbot._internal.plugins.webroot:All challenges cleaned up
+2024-06-30 19:03:25,100:ERROR:certbot._internal.renewal:Failed to renew certificate tlexi.com with error: Some challenges have failed.
+2024-06-30 19:03:25,105:DEBUG:certbot._internal.renewal:Traceback was:
+Traceback (most recent call last):
+  File "/opt/certbot/src/certbot/certbot/_internal/renewal.py", line 540, in handle_renewal_request
+    main.renew_cert(lineage_config, plugins, renewal_candidate)
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1550, in renew_cert
+    renewed_lineage = _get_and_save_cert(le_client, config, lineage=lineage)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 131, in _get_and_save_cert
+    renewal.renew_cert(config, domains, le_client, lineage)
+  File "/opt/certbot/src/certbot/certbot/_internal/renewal.py", line 399, in renew_cert
+    new_cert, new_chain, new_key, _ = le_client.obtain_certificate(domains, new_key)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/client.py", line 428, in obtain_certificate
+    orderr = self._get_order_and_authorizations(csr.data, self.config.allow_subset_of_names)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/client.py", line 496, in _get_order_and_authorizations
+    authzr = self.auth_handler.handle_authorizations(orderr, self.config, best_effort)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/auth_handler.py", line 108, in handle_authorizations
+    self._poll_authorizations(authzrs, max_retries, max_time_mins, best_effort)
+  File "/opt/certbot/src/certbot/certbot/_internal/auth_handler.py", line 212, in _poll_authorizations
+    raise errors.AuthorizationError('Some challenges have failed.')
+certbot.errors.AuthorizationError: Some challenges have failed.
+
+2024-06-30 19:03:25,119:DEBUG:certbot._internal.display.obj:Notifying user: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-30 19:03:25,119:ERROR:certbot._internal.renewal:All renewals failed. The following certificates could not be renewed:
+2024-06-30 19:03:25,119:ERROR:certbot._internal.renewal:  /etc/letsencrypt/live/tlexi.com/fullchain.pem (failure)
+2024-06-30 19:03:25,119:DEBUG:certbot._internal.display.obj:Notifying user: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-30 19:03:25,119:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/local/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1642, in renew
+    renewed_domains, failed_domains = renewal.handle_renewal_request(config)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/renewal.py", line 568, in handle_renewal_request
+    raise errors.Error(
+certbot.errors.Error: 1 renew failure(s), 0 parse failure(s)
+2024-06-30 19:03:25,121:ERROR:certbot._internal.log:1 renew failure(s), 0 parse failure(s)

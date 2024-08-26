@@ -1,0 +1,13 @@
+2024-04-15 10:42:30,076:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Arguments: []
+2024-04-15 10:42:30,077:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-04-15 10:42:30,096:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-04-15 10:42:30,128:DEBUG:certbot._internal.display.obj:Notifying user: Found the following certs:
+  Certificate Name: tlexi.com
+    Serial Number: 3d42ed9aa01f5e33a66f941490a008f309f
+    Key Type: ECDSA
+    Domains: tlexi.com
+    Expiry Date: 2024-04-08 01:48:00+00:00 (INVALID: EXPIRED)
+    Certificate Path: /etc/letsencrypt/live/tlexi.com/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/tlexi.com/privkey.pem

@@ -14,8 +14,8 @@ services:
     certbot:
         image: certbot/certbot:latest
         # command: certonly --webroot --webroot-path=/var/www/certbot --email shk8532@gmail.com --agree-tos --no-eff-email -d tlexi.com
-        # command: renew --dry-run --server https://acme-v02.api.letsencrypt.org/directory --cert-name tlexi.com
-        command: certificates
+        command: renew --server https://acme-v02.api.letsencrypt.org/directory --cert-name tlexi.com
+        # command: certificates
         # command: delete --cert-name tlexi.com
         volumes:
             - /home/user1/tlexi/certbot/certbot/conf:/etc/letsencrypt
